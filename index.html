@@ -1,0 +1,1627 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ЧелябСанТехПром — Пенистые умывальники № 1 в России</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=PT+Serif:ital,wght@0,400;0,700;1,400&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --red: #c0392b;
+      --dark-red: #922b21;
+      --gold: #d4ac0d;
+      --gold-light: #f4d03f;
+      --cream: #fdf6e3;
+      --dark: #1a1a1a;
+      --gray: #4a4a4a;
+      --light-gray: #f5f5f5;
+      --blue: #1a5276;
+      --foam: #e8f8f5;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      color: var(--dark);
+      background: var(--cream);
+      overflow-x: hidden;
+    }
+
+    /* ===== ХЕДЕР НАВИГАЦИЯ ===== */
+    nav {
+      background: var(--dark);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 3px solid var(--red);
+    }
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 24px;
+    }
+    .nav-logo {
+      font-family: 'Oswald', sans-serif;
+      color: var(--gold);
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-decoration: none;
+    }
+    .nav-logo span { color: white; }
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+    .nav-links a {
+      color: #ccc;
+      text-decoration: none;
+      font-size: 13px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-cta {
+      background: var(--red);
+      color: white !important;
+      padding: 8px 20px;
+      border-radius: 2px;
+      font-weight: 500 !important;
+    }
+    .nav-cta:hover { background: var(--dark-red); color: white !important; }
+
+    /* ===== HERO ===== */
+    .hero {
+      background: linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 40%, #1a1a1a 100%);
+      min-height: 92vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: 
+        radial-gradient(ellipse at 70% 50%, rgba(192,57,43,0.15) 0%, transparent 60%),
+        repeating-linear-gradient(
+          45deg,
+          transparent,
+          transparent 40px,
+          rgba(255,255,255,0.01) 40px,
+          rgba(255,255,255,0.01) 41px
+        );
+    }
+    .hero-stars {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      display: flex;
+      justify-content: space-around;
+      padding: 20px;
+      font-size: 28px;
+      opacity: 0.08;
+      pointer-events: none;
+    }
+    .hero-content {
+      padding: 60px 60px 60px 80px;
+      position: relative;
+      z-index: 2;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: var(--red);
+      color: white;
+      font-family: 'Oswald', sans-serif;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      margin-bottom: 24px;
+    }
+    .hero h1 {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(42px, 5vw, 72px);
+      font-weight: 700;
+      color: white;
+      line-height: 1.05;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .hero h1 .accent { color: var(--gold); }
+    .hero-subtitle {
+      font-family: 'PT Serif', serif;
+      font-size: 22px;
+      color: #aaa;
+      font-style: italic;
+      margin-bottom: 32px;
+      line-height: 1.5;
+    }
+    .hero-subtitle strong { color: var(--gold-light); font-style: normal; }
+    .hero-desc {
+      color: #888;
+      font-size: 15px;
+      line-height: 1.7;
+      margin-bottom: 40px;
+      max-width: 440px;
+    }
+    .hero-btns {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      background: var(--red);
+      color: white;
+      padding: 16px 40px;
+      font-family: 'Oswald', sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-primary:hover { background: var(--dark-red); transform: translateY(-2px); }
+    .btn-outline {
+      background: transparent;
+      color: var(--gold);
+      padding: 15px 36px;
+      font-family: 'Oswald', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border: 2px solid var(--gold);
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.2s;
+    }
+    .btn-outline:hover { background: var(--gold); color: var(--dark); }
+    .hero-stats {
+      display: flex;
+      gap: 40px;
+      margin-top: 48px;
+      padding-top: 40px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    .hero-stat { text-align: left; }
+    .hero-stat-num {
+      font-family: 'Oswald', sans-serif;
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--gold);
+      display: block;
+      line-height: 1;
+    }
+    .hero-stat-label {
+      color: #666;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 4px;
+    }
+    .hero-image-wrap {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+    }
+    .hero-image-wrap img {
+      width: 100%;
+      max-width: 560px;
+      border-radius: 4px;
+      box-shadow: 0 40px 80px rgba(0,0,0,0.6);
+      object-fit: cover;
+      aspect-ratio: 4/3;
+      background: #2a2a2a;
+    }
+    .hero-image-label {
+      position: absolute;
+      bottom: 60px;
+      left: 60px;
+      background: var(--red);
+      color: white;
+      font-family: 'Oswald', sans-serif;
+      font-size: 13px;
+      padding: 8px 20px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* ===== РАЗДЕЛ О КОМПАНИИ ===== */
+    .section { padding: 100px 0; }
+    .section-inner { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+
+    .section-tag {
+      font-family: 'Oswald', sans-serif;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--red);
+      margin-bottom: 12px;
+      display: block;
+    }
+    .section-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(32px, 4vw, 52px);
+      font-weight: 700;
+      color: var(--dark);
+      text-transform: uppercase;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+    .section-title .accent { color: var(--red); }
+    .section-lead {
+      font-family: 'PT Serif', serif;
+      font-size: 20px;
+      color: var(--gray);
+      font-style: italic;
+      line-height: 1.6;
+      margin-bottom: 32px;
+    }
+    .section-divider {
+      width: 60px;
+      height: 4px;
+      background: var(--red);
+      margin-bottom: 40px;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .about-text p {
+      color: var(--gray);
+      font-size: 16px;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+    .about-img img {
+      width: 100%;
+      border-radius: 4px;
+      box-shadow: 8px 8px 0 var(--red);
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      background: #ddd;
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 40px;
+      margin-top: 48px;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 8px;
+      top: 0; bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--red), var(--gold));
+    }
+    .timeline-item {
+      position: relative;
+      margin-bottom: 32px;
+    }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -36px;
+      top: 6px;
+      width: 12px;
+      height: 12px;
+      background: var(--red);
+      border-radius: 50%;
+      border: 2px solid var(--cream);
+    }
+    .timeline-year {
+      font-family: 'Oswald', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--gold);
+    }
+    .timeline-text {
+      font-size: 15px;
+      color: var(--gray);
+      line-height: 1.6;
+      margin-top: 4px;
+    }
+
+    /* ===== ИСТОРИЯ ИЗОБРЕТЕНИЯ ===== */
+    .invention { background: var(--dark); }
+    .invention .section-title { color: white; }
+    .invention .section-tag { color: var(--gold); }
+    .invention .section-lead { color: #999; }
+    .invention-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .invention-img img {
+      width: 100%;
+      border-radius: 4px;
+      border: 3px solid var(--gold);
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      background: #333;
+    }
+    .invention-text p {
+      color: #aaa;
+      font-size: 16px;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+    .invention-text .quote {
+      border-left: 4px solid var(--gold);
+      padding: 16px 24px;
+      background: rgba(212, 172, 13, 0.08);
+      margin: 32px 0;
+      font-family: 'PT Serif', serif;
+      font-style: italic;
+      font-size: 18px;
+      color: var(--gold-light);
+      line-height: 1.6;
+    }
+    .patent-box {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(212,172,13,0.3);
+      border-radius: 4px;
+      padding: 24px;
+      margin-top: 32px;
+    }
+    .patent-box h4 {
+      font-family: 'Oswald', sans-serif;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+      font-size: 14px;
+    }
+    .patent-box ul {
+      list-style: none;
+      color: #888;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+    .patent-box ul li::before { content: '№ '; color: var(--gold); }
+
+    /* ===== ПРОДУКТЫ ===== */
+    .products { background: var(--light-gray); }
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-top: 60px;
+    }
+    .product-card {
+      background: white;
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      transition: transform 0.25s, box-shadow 0.25s;
+      position: relative;
+    }
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.15);
+    }
+    .product-card .badge {
+      position: absolute;
+      top: 12px;
+      left: 0;
+      background: var(--red);
+      color: white;
+      font-family: 'Oswald', sans-serif;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 4px 12px;
+      z-index: 1;
+    }
+    .product-card .badge.gold { background: var(--gold); color: var(--dark); }
+    .product-card .badge.blue { background: var(--blue); }
+    .product-img {
+      aspect-ratio: 1;
+      overflow: hidden;
+    }
+    .product-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      background: #eee;
+      transition: transform 0.3s;
+    }
+    .product-card:hover .product-img img { transform: scale(1.05); }
+    .product-info { padding: 20px; }
+    .product-name {
+      font-family: 'Oswald', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      color: var(--dark);
+    }
+    .product-desc {
+      font-size: 13px;
+      color: #888;
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+    .product-specs {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      margin-bottom: 16px;
+    }
+    .product-spec {
+      font-size: 12px;
+      color: #aaa;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .product-spec::before { content: '✓'; color: var(--red); font-weight: bold; }
+    .product-price {
+      display: flex;
+      align-items: baseline;
+      gap: 4px;
+      margin-bottom: 16px;
+    }
+    .product-price .amount {
+      font-family: 'Oswald', sans-serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--red);
+    }
+    .product-price .currency { color: #aaa; font-size: 14px; }
+    .product-btn {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      background: var(--dark);
+      color: white;
+      font-family: 'Oswald', sans-serif;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border: none;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .product-btn:hover { background: var(--red); }
+
+    /* ===== ПРЕИМУЩЕСТВА ===== */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 48px;
+      margin-top: 60px;
+    }
+    .feature-item { text-align: center; }
+    .feature-icon {
+      font-size: 48px;
+      margin-bottom: 20px;
+      display: block;
+    }
+    .feature-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 18px;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: var(--dark);
+    }
+    .feature-desc {
+      font-size: 14px;
+      color: #888;
+      line-height: 1.7;
+    }
+    .feature-number {
+      display: inline-block;
+      background: var(--red);
+      color: white;
+      font-family: 'Oswald', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 4px 12px;
+      margin-bottom: 12px;
+    }
+
+    /* ===== ЦИФРЫ ===== */
+    .numbers { background: var(--red); }
+    .numbers .section-tag { color: rgba(255,255,255,0.6); }
+    .numbers .section-title { color: white; }
+    .numbers-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px;
+      margin-top: 60px;
+    }
+    .number-item { text-align: center; }
+    .number-value {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(48px, 6vw, 80px);
+      font-weight: 700;
+      color: white;
+      line-height: 1;
+      display: block;
+    }
+    .number-unit {
+      font-family: 'Oswald', sans-serif;
+      font-size: 24px;
+      color: rgba(255,255,255,0.5);
+    }
+    .number-label {
+      font-size: 13px;
+      color: rgba(255,255,255,0.6);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 12px;
+    }
+    .number-divider {
+      width: 40px;
+      height: 2px;
+      background: rgba(255,255,255,0.3);
+      margin: 12px auto 0;
+    }
+
+    /* ===== ОТЗЫВЫ ===== */
+    .reviews { background: var(--cream); }
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+      margin-top: 60px;
+    }
+    .review-card {
+      background: white;
+      padding: 32px;
+      border-radius: 4px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      border-top: 4px solid var(--red);
+      position: relative;
+    }
+    .review-quote {
+      font-size: 64px;
+      color: var(--red);
+      font-family: 'PT Serif', serif;
+      line-height: 1;
+      opacity: 0.3;
+      position: absolute;
+      top: 16px;
+      left: 24px;
+    }
+    .review-stars {
+      color: var(--gold);
+      font-size: 18px;
+      margin-bottom: 16px;
+    }
+    .review-text {
+      font-family: 'PT Serif', serif;
+      font-size: 16px;
+      color: var(--gray);
+      line-height: 1.8;
+      font-style: italic;
+      margin-bottom: 24px;
+      padding-top: 8px;
+    }
+    .review-author {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .review-avatar {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      object-fit: cover;
+      background: #ddd;
+      border: 2px solid var(--red);
+    }
+    .review-name {
+      font-family: 'Oswald', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--dark);
+    }
+    .review-meta {
+      font-size: 12px;
+      color: #aaa;
+      margin-top: 2px;
+    }
+    .review-product {
+      font-size: 11px;
+      color: var(--red);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 4px;
+    }
+
+    /* ===== СЕРТИФИКАТЫ ===== */
+    .certs { background: var(--dark); }
+    .certs .section-tag { color: var(--gold); }
+    .certs .section-title { color: white; }
+    .certs .section-lead { color: #999; }
+    .certs-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 40px;
+      margin-top: 60px;
+      align-items: start;
+    }
+    .cert-card {
+      text-align: center;
+    }
+    .cert-card img {
+      width: 100%;
+      max-width: 280px;
+      border-radius: 4px;
+      border: 2px solid rgba(212,172,13,0.4);
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      background: #2a2a2a;
+      margin-bottom: 20px;
+    }
+    .cert-name {
+      font-family: 'Oswald', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: white;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+    .cert-year {
+      font-size: 13px;
+      color: var(--gold);
+    }
+    .awards-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 60px;
+    }
+    .award-item {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(212,172,13,0.2);
+      padding: 28px;
+      text-align: center;
+      border-radius: 4px;
+    }
+    .award-icon { font-size: 40px; margin-bottom: 12px; display: block; }
+    .award-title {
+      font-family: 'Oswald', sans-serif;
+      color: var(--gold);
+      font-size: 15px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+    .award-desc { font-size: 13px; color: #777; line-height: 1.6; }
+
+    /* ===== ФОРМА ЗАКАЗА ===== */
+    .order { background: var(--light-gray); }
+    .order-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .order-info h3 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 22px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      color: var(--dark);
+    }
+    .order-info p {
+      font-size: 15px;
+      color: var(--gray);
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+    .contact-items { display: flex; flex-direction: column; gap: 16px; }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .contact-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--red);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+      border-radius: 2px;
+    }
+    .contact-text { font-size: 15px; color: var(--gray); }
+    .contact-text strong {
+      display: block;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--red);
+      margin-bottom: 2px;
+    }
+    .form-card {
+      background: white;
+      padding: 40px;
+      border-radius: 4px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    }
+    .form-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 24px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      color: var(--dark);
+      border-bottom: 3px solid var(--red);
+      padding-bottom: 16px;
+    }
+    .form-group { margin-bottom: 20px; }
+    .form-group label {
+      display: block;
+      font-size: 12px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--gray);
+      margin-bottom: 8px;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border: 2px solid #e0e0e0;
+      border-radius: 2px;
+      font-size: 15px;
+      font-family: 'Roboto', sans-serif;
+      color: var(--dark);
+      background: white;
+      transition: border-color 0.2s;
+      outline: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus { border-color: var(--red); }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .form-submit {
+      width: 100%;
+      padding: 16px;
+      background: var(--red);
+      color: white;
+      font-family: 'Oswald', sans-serif;
+      font-size: 18px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .form-submit:hover { background: var(--dark-red); }
+    .form-disclaimer {
+      font-size: 11px;
+      color: #bbb;
+      text-align: center;
+      margin-top: 12px;
+      line-height: 1.6;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: #111;
+      color: #666;
+      padding: 60px 0 40px;
+      border-top: 4px solid var(--red);
+    }
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 60px;
+      margin-bottom: 48px;
+    }
+    .footer-logo {
+      font-family: 'Oswald', sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 16px;
+    }
+    .footer-logo span { color: white; }
+    .footer-desc {
+      font-size: 13px;
+      line-height: 1.8;
+      color: #555;
+    }
+    .footer-col h4 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #999;
+      margin-bottom: 20px;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 10px; }
+    .footer-col ul li a {
+      color: #555;
+      text-decoration: none;
+      font-size: 13px;
+      transition: color 0.2s;
+    }
+    .footer-col ul li a:hover { color: var(--gold); }
+    .footer-bottom {
+      border-top: 1px solid #222;
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer-copy { font-size: 12px; color: #444; }
+    .footer-gost {
+      font-size: 12px;
+      color: #333;
+      font-family: 'Oswald', sans-serif;
+      letter-spacing: 1px;
+    }
+
+    /* ===== ГОСТ ПОЛОСКА ===== */
+    .gost-bar {
+      background: var(--blue);
+      padding: 16px 0;
+      text-align: center;
+    }
+    .gost-bar-text {
+      font-family: 'Oswald', sans-serif;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: rgba(255,255,255,0.8);
+    }
+    .gost-bar-text strong { color: white; }
+
+    /* ===== UTILITY ===== */
+    .text-center { text-align: center; }
+    .mt-sm { margin-top: 24px; }
+
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-image-wrap { display: none; }
+      .hero-content { padding: 60px 32px; }
+      .about-grid, .invention-grid, .order-grid { grid-template-columns: 1fr; gap: 40px; }
+      .products-grid { grid-template-columns: repeat(2, 1fr); }
+      .features-grid { grid-template-columns: repeat(2, 1fr); }
+      .numbers-grid { grid-template-columns: repeat(2, 1fr); }
+      .reviews-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .certs-grid { grid-template-columns: 1fr; }
+      .awards-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== НАВИГАЦИЯ ===== -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">ЧелябСанТех<span>Пром</span></a>
+    <ul class="nav-links">
+      <li><a href="#about">О компании</a></li>
+      <li><a href="#products">Продукция</a></li>
+      <li><a href="#advantages">Преимущества</a></li>
+      <li><a href="#reviews">Отзывы</a></li>
+      <li><a href="#order" class="nav-cta">Заказать</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-stars">★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★</div>
+  <div class="hero-content">
+    <div class="hero-badge">★ №1 в России и СНГ с 1987 года ★</div>
+    <h1>
+      Пенистые<br>
+      <span class="accent">умывальники</span>
+    </h1>
+    <p class="hero-subtitle">
+      <strong>Пенистость.</strong> Которой ты заслуживаешь.
+    </p>
+    <p class="hero-desc">
+      Более 35 лет мы создаём умывальники с запатентованной технологией 
+      <strong>ChelPENA™</strong>, которая обеспечивает невиданную ранее плотность 
+      пенообразования. Сертифицированы по ГОСТ Р 52506-2005. Гарантия 25 лет.
+    </p>
+    <div class="hero-btns">
+      <a href="#products" class="btn-primary">Выбрать умывальник</a>
+      <a href="#about" class="btn-outline">История бренда</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <span class="hero-stat-num">2.4М</span>
+        <span class="hero-stat-label">Умывальников продано</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num">38</span>
+        <span class="hero-stat-label">Лет на рынке</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num">340%</span>
+        <span class="hero-stat-label">Больше пены</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-image-wrap">
+    <img src="images/hero-sink.png" alt="Пенистый умывальник ЧелябСанТехПром">
+    <div class="hero-image-label">ChelPENA™ Ultra Series</div>
+  </div>
+</section>
+
+<!-- ===== ГОСТ ПОЛОСКА ===== -->
+<div class="gost-bar">
+  <p class="gost-bar-text">
+    <strong>ГОСТ Р 52506-2005</strong> · Сертификат соответствия № РОСС RU.АЮ83.Н02576 · 
+    Производство: г. Челябинск, ул. Промышленная, 12 · 
+    <strong>ПАО «ЧелябСанТехПром»</strong>
+  </p>
+</div>
+
+<!-- ===== О КОМПАНИИ ===== -->
+<section class="section" id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-text">
+        <span class="section-tag">О компании</span>
+        <h2 class="section-title">37 лет в авангарде <span class="accent">пенной</span> революции</h2>
+        <div class="section-divider"></div>
+        <p class="section-lead">
+          Мы не просто делаем умывальники. Мы создаём портал между человеком и пеной.
+        </p>
+        <p>
+          Открытое акционерное общество «ЧелябСанТехПром» было основано 14 марта 1987 года 
+          в городе Челябинске — в самом сердце Уральской промышленной зоны. Основатель компании, 
+          Геннадий Никифорович Бубнов, работавший ранее технологом на ЧТЗ, увидел острейший 
+          дефицит качественной сантехнической продукции в эпоху позднего СССР и решил 
+          заполнить эту пустоту своей мечтой.
+        </p>
+        <p>
+          В переломные 90-е, когда большинство советских предприятий распалось, как мыльный 
+          пузырь, «ЧелябСанТехПром» не только выжил, но и совершил поворот, изменивший всю 
+          отрасль: в 1994 году главный инженер Валерий Михайлович Скобелев разработал 
+          технологию пенообразующего покрытия внутренней чаши умывальника — так родилась 
+          легендарная линейка «Пенистых умывальников».
+        </p>
+        <p>
+          Сегодня наша продукция поставляется в 23 региона Российской Федерации, а также 
+          в Беларусь, Казахстан и Кыргызстан. Ежегодный объём производства превышает 
+          120 000 единиц умывальников различных серий.
+        </p>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-year">1987</div>
+            <div class="timeline-text">Основание ЧелябСанТехПром. Первый цех, 11 рабочих, один станок и неиссякаемая вера в пену.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">1991</div>
+            <div class="timeline-text">Распад СССР. Завод устоял. По легенде, Геннадий Бубнов произнёс: «Пока люди умываются — мы живём».</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">1994</div>
+            <div class="timeline-text">Изобретение технологии ChelPENA™. Регистрация первого патента. Пена изменила всё.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2003</div>
+            <div class="timeline-text">Выход на рынок СНГ. Открытие представительства в Минске. Белорусы приняли пену с восторгом.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2019</div>
+            <div class="timeline-text">Премия «Лучший умывальник СНГ». Открытие второго производственного корпуса площадью 4800 м².</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2026</div>
+            <div class="timeline-text">Запуск линейки Ultra Pro Max с технологией PeneMax™ 5.0. Новая эра пены наступила.</div>
+          </div>
+        </div>
+      </div>
+      <div class="about-img">
+        <img src="images/factory.png" alt="Завод ЧелябСанТехПром">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ИСТОРИЯ ИЗОБРЕТЕНИЯ ===== -->
+<section class="section invention" id="invention">
+  <div class="section-inner">
+    <div class="invention-grid">
+      <div class="invention-img">
+        <img src="images/inventor.png" alt="Валерий Михайлович Скобелев — изобретатель пенистого умывальника">
+      </div>
+      <div class="invention-text">
+        <span class="section-tag">История изобретения</span>
+        <h2 class="section-title">Как один инженер изменил <span class="accent">мир умывания</span></h2>
+        <div class="section-divider"></div>
+        <p>
+          Февраль 1994 года. Челябинск. Минус 28 за окном. В заводской лаборатории 
+          Валерий Михайлович Скобелев в 47-й раз подряд моет руки над обычным умывальником 
+          и думает: «Чего-то здесь не хватает».
+        </p>
+        <p>
+          Не хватало пены. Той самой — обволакивающей, торжественной, почти космической. 
+          Он достал блокнот и начал чертить. К утру чертёж был готов: керамическая чаша 
+          с микропористым покрытием, пропитанным запатентованным составом на основе 
+          натриевого алкилсульфата, карбоната магния и «секретного ингредиента» — 
+          формула которого до сих пор хранится в сейфе директора под тремя замками.
+        </p>
+        <div class="quote">
+          «Я понял, что умывальник — это не просто сантехника. Это философия. 
+          А пена — это язык, на котором умывальник разговаривает с человеком.»
+          <br><strong style="font-style: normal; font-size: 14px; color: var(--gold);">— В.М. Скобелев, 1994</strong>
+        </div>
+        <p>
+          Первый прототип пенистого умывальника был готов в апреле 1994 года. 
+          Испытание провели прямо в заводском туалете. Когда Геннадий Бубнов открыл 
+          кран и увидел, как умывальник начал самостоятельно вспениваться — он заплакал. 
+          По словам очевидцев, это были слёзы счастья.
+        </p>
+        <p>
+          В декабре того же года был зарегистрирован первый патент. С тех пор технология 
+          прошла 12 поколений улучшений, но принцип остался неизменным: 
+          <em>пена первична, умывальник вторичен</em>.
+        </p>
+        <div class="patent-box">
+          <h4>Зарегистрированные патенты РФ</h4>
+          <ul>
+            <li>2054129 — «Устройство пенообразующее умывальное», 1994</li>
+            <li>2187934 — «Способ активации пены при контакте с водой», 2001</li>
+            <li>2341413 — «ChelPENA™ v3.0 — покрытие с памятью пены», 2008</li>
+            <li>2634872 — «PeneMax™ — технология самовосстанавливающейся пены», 2017</li>
+            <li>2798541 — «Умный умывальник с контролем пенности через Wi-Fi», 2023</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ПРОДУКТЫ ===== -->
+<section class="section products" id="products">
+  <div class="section-inner">
+    <div class="text-center">
+      <span class="section-tag">Наша продукция</span>
+      <h2 class="section-title">Линейка <span class="accent">пенистых</span> умывальников</h2>
+      <p class="section-lead">Для каждого уровня пены — свой умывальник</p>
+    </div>
+    <div class="products-grid">
+      <div class="product-card">
+        <div class="badge">Базовый</div>
+        <div class="product-img">
+          <img src="images/sink-standard.png" alt="Пенистый Стандарт">
+        </div>
+        <div class="product-info">
+          <div class="product-name">Пенистый Стандарт</div>
+          <p class="product-desc">
+            Классический пенистый умывальник для тех, кто только открывает для себя мир пены. 
+            Технология ChelPENA™ 1.0.
+          </p>
+          <div class="product-specs">
+            <span class="product-spec">Пена: умеренная</span>
+            <span class="product-spec">ГОСТ Р 52506-2005</span>
+            <span class="product-spec">Гарантия 10 лет</span>
+            <span class="product-spec">Цвет: белый</span>
+          </div>
+          <div class="product-price">
+            <span class="amount">12 490</span>
+            <span class="currency">₽</span>
+          </div>
+          <a href="#order" class="product-btn">Заказать</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="badge gold">Хит продаж</div>
+        <div class="product-img">
+          <img src="images/sink-lux.png" alt="Пенистый Люкс">
+        </div>
+        <div class="product-info">
+          <div class="product-name">Пенистый Люкс</div>
+          <p class="product-desc">
+            Для ценителей. Золотые краны, мраморная отделка, пена на 210% плотнее. 
+            Технология ChelPENA™ 3.0.
+          </p>
+          <div class="product-specs">
+            <span class="product-spec">Пена: обильная</span>
+            <span class="product-spec">Краны: позолоченные</span>
+            <span class="product-spec">Гарантия 20 лет</span>
+            <span class="product-spec">Цвет: мрамор белый</span>
+          </div>
+          <div class="product-price">
+            <span class="amount">38 900</span>
+            <span class="currency">₽</span>
+          </div>
+          <a href="#order" class="product-btn">Заказать</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="badge blue">Топовый</div>
+        <div class="product-img">
+          <img src="images/sink-ultra.png" alt="Пенистый Ультра Про Макс">
+        </div>
+        <div class="product-info">
+          <div class="product-name">Ультра Про Макс</div>
+          <p class="product-desc">
+            Вершина инженерной мысли. 5 режимов пены. Wi-Fi управление. 
+            Технология PeneMax™ 5.0. Пена на 340%.
+          </p>
+          <div class="product-specs">
+            <span class="product-spec">Пена: экстремальная</span>
+            <span class="product-spec">Wi-Fi + Bluetooth</span>
+            <span class="product-spec">Гарантия 25 лет</span>
+            <span class="product-spec">5 режимов пенности</span>
+          </div>
+          <div class="product-price">
+            <span class="amount">89 990</span>
+            <span class="currency">₽</span>
+          </div>
+          <a href="#order" class="product-btn">Заказать</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="badge">Детский</div>
+        <div class="product-img">
+          <img src="images/sink-kids.png" alt="Пенистый Детский">
+        </div>
+        <div class="product-info">
+          <div class="product-name">Пенистый Детский</div>
+          <p class="product-desc">
+            Маленький умывальник — большая пена! Яркие цвета, безопасная пена, 
+            уточки в комплекте. ChelPENA™ Kids.
+          </p>
+          <div class="product-specs">
+            <span class="product-spec">Пена: весёлая</span>
+            <span class="product-spec">Уточки в комплекте</span>
+            <span class="product-spec">Гарантия 5 лет</span>
+            <span class="product-spec">Гипоаллергенно</span>
+          </div>
+          <div class="product-price">
+            <span class="amount">7 490</span>
+            <span class="currency">₽</span>
+          </div>
+          <a href="#order" class="product-btn">Заказать</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ПРЕИМУЩЕСТВА ===== -->
+<section class="section" id="advantages">
+  <div class="section-inner">
+    <div class="text-center">
+      <span class="section-tag">Почему мы</span>
+      <h2 class="section-title">6 причин выбрать <span class="accent">нашу пену</span></h2>
+      <p class="section-lead">Потому что обычная пена — это не пена. Это недоразумение.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-item">
+        <span class="feature-icon">🫧</span>
+        <div class="feature-number">+340%</div>
+        <div class="feature-title">Пены больше</div>
+        <p class="feature-desc">
+          Наши умывальники производят на 340% больше пены, чем любой обычный умывальник. 
+          Это измеряется в пено-единицах (ПЕ) по запатентованной нами методологии.
+        </p>
+      </div>
+      <div class="feature-item">
+        <span class="feature-icon">🏭</span>
+        <div class="feature-number">100%</div>
+        <div class="feature-title">Сделано в Челябинске</div>
+        <p class="feature-desc">
+          Полный цикл производства на родном заводе. Никакого Китая. 
+          Уральская сталь, уральский характер, уральская пена. Гордость металлургического края.
+        </p>
+      </div>
+      <div class="feature-item">
+        <span class="feature-icon">📜</span>
+        <div class="feature-number">ГОСТ</div>
+        <div class="feature-title">Полная сертификация</div>
+        <p class="feature-desc">
+          Сертифицированы по ГОСТ Р 52506-2005, ГОСТ Р ИСО 9001-2015, 
+          ТР ТС 010/2011 и ещё 7 другим нормативным документам. Бюрократия как гарантия качества.
+        </p>
+      </div>
+      <div class="feature-item">
+        <span class="feature-icon">🔬</span>
+        <div class="feature-number">5 патентов</div>
+        <div class="feature-title">Инновационная технология</div>
+        <p class="feature-desc">
+          5 российских патентов на технологию ChelPENA™. 
+          Наш секретный состав пенообразователя не раскрывался никому — 
+          даже на допросе в налоговой.
+        </p>
+      </div>
+      <div class="feature-item">
+        <span class="feature-icon">🛡️</span>
+        <div class="feature-number">25 лет</div>
+        <div class="feature-title">Гарантия</div>
+        <p class="feature-desc">
+          Мы настолько уверены в нашей продукции, что даём гарантию 25 лет 
+          на модели Люкс и Ультра. Пена не иссякнет. Никогда. Мы клянёмся.
+        </p>
+      </div>
+      <div class="feature-item">
+        <span class="feature-icon">🌊</span>
+        <div class="feature-number">ChelPENA™</div>
+        <div class="feature-title">Уникальная пена</div>
+        <p class="feature-desc">
+          Технология ChelPENA™ 5.0 создаёт пену с молекулярной памятью. 
+          Умывальник запоминает ваш любимый уровень пены и воспроизводит его 
+          при каждом включении воды.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ЦИФРЫ ===== -->
+<section class="section numbers">
+  <div class="section-inner text-center">
+    <span class="section-tag">ЧелябСанТехПром в цифрах</span>
+    <h2 class="section-title" style="color: white;">Мы не говорим о пене — <br>мы её <span style="color: var(--gold);">производим</span></h2>
+    <div class="numbers-grid">
+      <div class="number-item">
+        <span class="number-value">2<span class="number-unit">,4М</span></span>
+        <div class="number-divider"></div>
+        <div class="number-label">Умывальников продано</div>
+      </div>
+      <div class="number-item">
+        <span class="number-value">38<span class="number-unit"> лет</span></span>
+        <div class="number-divider"></div>
+        <div class="number-label">На рынке</div>
+      </div>
+      <div class="number-item">
+        <span class="number-value">23<span class="number-unit"> рег.</span></span>
+        <div class="number-divider"></div>
+        <div class="number-label">Регионов присутствия</div>
+      </div>
+      <div class="number-item">
+        <span class="number-value">847<span class="number-unit"> т</span></span>
+        <div class="number-divider"></div>
+        <div class="number-label">Пены произведено в 2025 году</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ОТЗЫВЫ ===== -->
+<section class="section reviews" id="reviews">
+  <div class="section-inner">
+    <div class="text-center">
+      <span class="section-tag">Отзывы покупателей</span>
+      <h2 class="section-title">Что говорят <span class="accent">люди</span></h2>
+      <p class="section-lead">Реальные отзывы. Реальная пена. Реальные эмоции.</p>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-quote">"</div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">
+          Поставил «Пенистый Люкс» в ванную три месяца назад. Жена сначала спрашивала, 
+          зачем мы потратили 38 тысяч на умывальник, когда прошлый был нормальным. 
+          После первого умывания она замолчала на пять минут, стояла и смотрела на пену. 
+          Теперь умывается по 40 минут. Мы помирились. Спасибо, ЧелябСанТехПром.
+        </p>
+        <div class="review-author">
+          <img class="review-avatar" src="images/review-2.png" alt="Дмитрий">
+          <div>
+            <div class="review-name">Дмитрий Павлович К.</div>
+            <div class="review-meta">Екатеринбург · Покупатель с 2023 года</div>
+            <div class="review-product">Пенистый Люкс</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-quote">"</div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">
+          Дорогие работники ЧелябСанТехПрома! Пишу вам в 82 года. Всю жизнь мыл руки 
+          обычной пеной из мыла — и был доволен. Но внук купил мне на день рождения 
+          «Пенистый Стандарт». Батюшки мои, что это такое! Пена идёт сама! Без мыла! 
+          Я первый раз в жизни помыл руки с улыбкой. Вы молодцы. Передайте изобретателю.
+        </p>
+        <div class="review-author">
+          <img class="review-avatar" src="images/review-4.png" alt="Иван Степанович">
+          <div>
+            <div class="review-name">Иван Степанович Г.</div>
+            <div class="review-meta">Магнитогорск · Ветеран труда</div>
+            <div class="review-product">Пенистый Стандарт</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-quote">"</div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">
+          Взяла «Ультра Про Макс» для нашего СПА-центра. Гости буквально фотографируют 
+          умывальник. Один клиент вернулся на следующий день просто помыть руки — 
+          без процедур, только ради пены. Выручка от «дополнительного умывания» 
+          уже окупила покупку. Это бизнес-решение, а не просто сантехника.
+        </p>
+        <div class="review-author">
+          <img class="review-avatar" src="images/review-3.png" alt="Анастасия">
+          <div>
+            <div class="review-name">Анастасия В.</div>
+            <div class="review-meta">Москва · Владелец СПА «Нирвана»</div>
+            <div class="review-product">Пенистый Ультра Про Макс</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-quote">"</div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">
+          Купила «Пенистый Детский» сыну Глебу (4 годика). Раньше умывание было 
+          настоящей войной — кричал, плакал, убегал. Теперь сам бежит в ванную. 
+          Стоит там по 20 минут и смотрит на пену. Муж тоже стал туда заходить. 
+          Теперь борюсь уже с ними обоими за право первыми умыться.
+        </p>
+        <div class="review-author">
+          <img class="review-avatar" src="images/review-1.png" alt="Тамара">
+          <div>
+            <div class="review-name">Тамара Ивановна Р.</div>
+            <div class="review-meta">Челябинск · Мама троих детей</div>
+            <div class="review-product">Пенистый Детский</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== СЕРТИФИКАТЫ И НАГРАДЫ ===== -->
+<section class="section certs" id="certs">
+  <div class="section-inner">
+    <div class="text-center">
+      <span class="section-tag">Сертификаты и награды</span>
+      <h2 class="section-title">Признание <span class="accent">экспертов</span> и государства</h2>
+      <p class="section-lead">Пена признана. Пена сертифицирована. Пена победила.</p>
+    </div>
+    <div class="certs-grid">
+      <div class="cert-card">
+        <img src="images/certificate.png" alt="Сертификат качества">
+        <div class="cert-name">Сертификат качества РФ</div>
+        <div class="cert-year">ГОСТ Р · Действителен до 2028</div>
+      </div>
+      <div class="cert-card">
+        <img src="images/award.png" alt="Лучший умывальник СНГ">
+        <div class="cert-name">Лучший умывальник СНГ</div>
+        <div class="cert-year">Межгосударственная выставка «СанТех-Экспо» · 2019</div>
+      </div>
+      <div class="cert-card">
+        <img src="images/certificate.png" alt="Пенность года">
+        <div class="cert-name">Пенность года</div>
+        <div class="cert-year">Ассоциация производителей сантехники России · 2022</div>
+      </div>
+    </div>
+
+    <div class="awards-row" style="margin-top: 60px;">
+      <div class="award-item">
+        <span class="award-icon">🏆</span>
+        <div class="award-title">Лучший умывальник СНГ 2019</div>
+        <p class="award-desc">Межгосударственная выставка «СанТех-Экспо», Минск. Победа в номинации «Инновационное пенообразование».</p>
+      </div>
+      <div class="award-item">
+        <span class="award-icon">🫧</span>
+        <div class="award-title">Пенность года 2022</div>
+        <p class="award-desc">Российская ассоциация производителей сантехники. «За выдающийся вклад в развитие культуры пены».</p>
+      </div>
+      <div class="award-item">
+        <span class="award-icon">⭐</span>
+        <div class="award-title">100 лучших товаров России</div>
+        <p class="award-desc">Программа «100 лучших товаров России», 2021 и 2023 гг. Единственный умывальник в истории программы.</p>
+      </div>
+      <div class="award-item">
+        <span class="award-icon">🔬</span>
+        <div class="award-title">Патент года 2017</div>
+        <p class="award-desc">Роспатент. Технология PeneMax™ признана лучшим изобретением года в категории «Промышленность и ЖКХ».</p>
+      </div>
+      <div class="award-item">
+        <span class="award-icon">🛡️</span>
+        <div class="award-title">ИСО 9001:2015</div>
+        <p class="award-desc">Международная сертификация системы менеджмента качества. Пена под контролем на всех этапах производства.</p>
+      </div>
+      <div class="award-item">
+        <span class="award-icon">❤️</span>
+        <div class="award-title">Выбор покупателей 2024</div>
+        <p class="award-desc">Рейтинг «Яндекс.Маркет». 4.9 из 5.0 по отзывам более 14 000 покупателей. Средняя оценка пены: 6 из 5.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ФОРМА ЗАКАЗА ===== -->
+<section class="section order" id="order">
+  <div class="section-inner">
+    <div class="order-grid">
+      <div class="order-info">
+        <span class="section-tag">Заказать</span>
+        <h2 class="section-title">Время <span class="accent">пениться</span></h2>
+        <div class="section-divider"></div>
+        <p>
+          Оставьте заявку, и наш менеджер свяжется с вами в течение 30 минут 
+          в рабочее время. Мы подберём оптимальный умывальник под ваш уровень 
+          пенопотребности, проконсультируем по монтажу и доставке.
+        </p>
+        <p>
+          Доставка по всей России и СНГ. Монтаж в Челябинске и области — 
+          нашими сертифицированными пенными мастерами.
+        </p>
+        <div class="contact-items">
+          <div class="contact-item">
+            <div class="contact-icon">📞</div>
+            <div class="contact-text">
+              <strong>Телефон</strong>
+              8-800-ПЕНА-00 (звонок бесплатный)
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">✉️</div>
+            <div class="contact-text">
+              <strong>Email</strong>
+              pena@chelябsantehprom.ru
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <div class="contact-text">
+              <strong>Адрес</strong>
+              454000, Челябинск, ул. Промышленная, д. 12<br>
+              ПАО «ЧелябСанТехПром»
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">🕐</div>
+            <div class="contact-text">
+              <strong>Режим работы</strong>
+              Пн–Пт 8:00–18:00 (пена работает круглосуточно)
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-card">
+        <div class="form-title">Оставить заявку</div>
+        <div class="form-group">
+          <label>Ваше имя *</label>
+          <input type="text" placeholder="Иван Иванович">
+        </div>
+        <div class="form-group">
+          <label>Телефон *</label>
+          <input type="tel" placeholder="+7 (___) ___-__-__">
+        </div>
+        <div class="form-group">
+          <label>Город доставки</label>
+          <input type="text" placeholder="Челябинск">
+        </div>
+        <div class="form-group">
+          <label>Интересует модель</label>
+          <select>
+            <option value="">— выберите —</option>
+            <option>Пенистый Стандарт — 12 490 ₽</option>
+            <option>Пенистый Люкс — 38 900 ₽</option>
+            <option>Пенистый Ультра Про Макс — 89 990 ₽</option>
+            <option>Пенистый Детский — 7 490 ₽</option>
+            <option>Затрудняюсь с выбором уровня пены</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Пожелания / комментарий</label>
+          <textarea placeholder="Например: хочу максимальную пену, но жена против..."></textarea>
+        </div>
+        <button class="form-submit" onclick="alert('Спасибо! Наш пенный менеджер свяжется с вами!')">
+          Хочу пениться!
+        </button>
+        <p class="form-disclaimer">
+          Нажимая кнопку, вы соглашаетесь с обработкой персональных данных 
+          в соответствии с ФЗ-152 «О персональных данных». 
+          Пена не передаётся третьим лицам.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">ЧелябСанТех<span>Пром</span></div>
+        <p class="footer-desc">
+          Публичное акционерное общество «ЧелябСанТехПром» — ведущий производитель 
+          пенистых умывальников в России и СНГ. Основано в 1987 году. 
+          Производство: г. Челябинск. ИНН 7452003456. ОГРН 1027402540789.
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Продукция</h4>
+        <ul>
+          <li><a href="#products">Пенистый Стандарт</a></li>
+          <li><a href="#products">Пенистый Люкс</a></li>
+          <li><a href="#products">Ультра Про Макс</a></li>
+          <li><a href="#products">Пенистый Детский</a></li>
+          <li><a href="#products">Запчасти</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Компания</h4>
+        <ul>
+          <li><a href="#about">О нас</a></li>
+          <li><a href="#invention">История пены</a></li>
+          <li><a href="#certs">Сертификаты</a></li>
+          <li><a href="#">Вакансии</a></li>
+          <li><a href="#">Пресс-центр</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Поддержка</h4>
+        <ul>
+          <li><a href="#order">Заказать</a></li>
+          <li><a href="#">Гарантия</a></li>
+          <li><a href="#">Доставка</a></li>
+          <li><a href="#">Монтаж</a></li>
+          <li><a href="#">Контакты</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">
+        © 1987–2026 ПАО «ЧелябСанТехПром». Все права защищены пеной.<br>
+        Пенистый умывальник® — зарегистрированный товарный знак. ChelPENA™ и PeneMax™ — патенты РФ.
+      </p>
+      <p class="footer-gost">ГОСТ Р 52506-2005 · ТР ТС 010/2011</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
