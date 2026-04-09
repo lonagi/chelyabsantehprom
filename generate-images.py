@@ -139,6 +139,43 @@ IMAGES = [
         ),
     },
     {
+        "filename": "review-5.png",
+        "prompt": (
+            "Headshot portrait of a happy middle-aged Russian man around 45, "
+            "slightly smug satisfied smile, receding hairline, wearing a casual shirt. "
+            "He looks like a happy son-in-law who got away with something. "
+            "Soft natural lighting, neutral background. Photorealistic casual portrait."
+        ),
+    },
+    {
+        "filename": "review-6.png",
+        "prompt": (
+            "Headshot portrait of a tired but relieved Russian man around 50, "
+            "slight bags under eyes, salt-and-pepper stubble, wearing a simple t-shirt. "
+            "Expression of someone who finally found peace after years of stress. "
+            "Soft natural lighting, neutral background. Photorealistic casual portrait."
+        ),
+    },
+    {
+        "filename": "review-7.png",
+        "prompt": (
+            "Headshot portrait of a very energetic cheerful elderly Russian man around 90, "
+            "bright sparkling eyes, big white mustache, rosy cheeks, full head of white hair. "
+            "He looks remarkably youthful and vigorous for his age, wide grin. "
+            "Warm natural lighting. Photorealistic portrait."
+        ),
+    },
+    {
+        "filename": "review-8.png",
+        "prompt": (
+            "Headshot portrait of a cheerful eccentric Russian elderly woman around 75, "
+            "with an unusually joyful expression, white curly hair with a small foam-colored "
+            "hair accessory, wearing a bright floral blouse. She looks like someone who "
+            "recently made a life-changing decision and is very happy about it. "
+            "Warm soft lighting. Photorealistic portrait."
+        ),
+    },
+    {
         "filename": "kabanich.png",
         "prompt": (
             "Portrait photo of a stocky, confident Russian businessman in his 50s, "
