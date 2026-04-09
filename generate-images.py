@@ -139,6 +139,30 @@ IMAGES = [
         ),
     },
     {
+        "filename": "kabanich.png",
+        "prompt": (
+            "Portrait photo of a stocky, confident Russian businessman in his 50s, "
+            "nicknamed 'Kabanich' (means 'little boar'). He has a thick neck, "
+            "short silver hair, small shrewd eyes, and a wide smile showing gold teeth. "
+            "Wearing a slightly too-tight dark suit with a golden tie pin shaped like a sink. "
+            "Standing proudly with arms crossed. Background: wood-paneled office with "
+            "a stuffed boar head on the wall and framed certificates. "
+            "Corporate portrait style, photorealistic."
+        ),
+    },
+    {
+        "filename": "kirochka.png",
+        "prompt": (
+            "Portrait photo of a cheerful energetic Russian HR manager woman in her 35s, "
+            "nicknamed 'Kirochka'. She has a bright warm smile, hair in a neat bun "
+            "with a pencil stuck through it, wearing a colorful blouse with small "
+            "bubble/foam pattern. Holding a clipboard with 'ПЛАН ПЕНЫ' written on it. "
+            "Background: cheerful office with motivational posters in Russian, "
+            "a wall calendar, and a small foam-covered sink model on the desk. "
+            "Friendly corporate portrait, photorealistic."
+        ),
+    },
+    {
         "filename": "certificate.png",
         "prompt": (
             "A formal Russian government certificate or diploma document, "

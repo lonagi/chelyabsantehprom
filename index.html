@@ -347,6 +347,76 @@
       margin-top: 4px;
     }
 
+    /* ===== КОМАНДА ===== */
+    .team { background: var(--light-gray); }
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 48px;
+      margin-top: 60px;
+      max-width: 860px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .team-card {
+      background: white;
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      display: flex;
+      flex-direction: column;
+    }
+    .team-photo {
+      aspect-ratio: 3/4;
+      overflow: hidden;
+      position: relative;
+    }
+    .team-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      background: #ddd;
+      transition: transform 0.4s;
+    }
+    .team-card:hover .team-photo img { transform: scale(1.04); }
+    .team-photo-badge {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.75), transparent);
+      padding: 32px 20px 16px;
+    }
+    .team-position {
+      font-family: 'Oswald', sans-serif;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--gold);
+      margin-bottom: 4px;
+    }
+    .team-name-over {
+      font-family: 'Oswald', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: white;
+      text-transform: uppercase;
+    }
+    .team-body { padding: 24px 28px 28px; flex: 1; }
+    .team-quote {
+      font-family: 'PT Serif', serif;
+      font-style: italic;
+      font-size: 15px;
+      color: var(--gray);
+      line-height: 1.7;
+      border-left: 3px solid var(--red);
+      padding-left: 16px;
+      margin-bottom: 16px;
+    }
+    .team-bio {
+      font-size: 14px;
+      color: #999;
+      line-height: 1.7;
+    }
+
     /* ===== ИСТОРИЯ ИЗОБРЕТЕНИЯ ===== */
     .invention { background: var(--dark); }
     .invention .section-title { color: white; }
@@ -942,6 +1012,7 @@
     <a href="#" class="nav-logo">ЧелябСанТех<span>Пром</span></a>
     <ul class="nav-links">
       <li><a href="#about">О компании</a></li>
+      <li><a href="#team">Команда</a></li>
       <li><a href="#products">Продукция</a></li>
       <li><a href="#advantages">Преимущества</a></li>
       <li><a href="#reviews">Отзывы</a></li>
@@ -1061,6 +1132,68 @@
       <div class="about-img">
         <img src="images/factory.png" alt="Завод ЧелябСанТехПром">
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== КОМАНДА ===== -->
+<section class="section team" id="team">
+  <div class="section-inner">
+    <div class="text-center">
+      <span class="section-tag">Наша команда</span>
+      <h2 class="section-title">Люди, которые стоят <span class="accent">за пеной</span></h2>
+      <p class="section-lead">Без них не было бы ни одного пузырька.</p>
+    </div>
+    <div class="team-grid">
+
+      <div class="team-card">
+        <div class="team-photo">
+          <img src="images/kabanich.png" alt="Кабаныч">
+          <div class="team-photo-badge">
+            <div class="team-position">Генеральный директор &amp; Владелец</div>
+            <div class="team-name-over">«Кабаныч»</div>
+          </div>
+        </div>
+        <div class="team-body">
+          <p class="team-quote">
+            «Пена — это не продукт. Пена — это идеология. Я всегда говорил: 
+            если умывальник не пенится — это не умывальник, это просто дырка в стене.»
+          </p>
+          <p class="team-bio">
+            Борис Аркадьевич Кабанов, в народе просто Кабаныч, возглавляет компанию 
+            с 1999 года, когда выкупил контрольный пакет у основателя Бубнова 
+            за три ящика уральского самогона и рукопожатие. 
+            Под его руководством выручка выросла в 12 раз, а уровень пены — в 340%. 
+            Лично объезжает дилеров на белой «Ниве» с хромированными дисками. 
+            Хобби: баня, домино, контроль пенности на производстве.
+          </p>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <div class="team-photo">
+          <img src="images/kirochka.png" alt="Кирочка">
+          <div class="team-photo-badge">
+            <div class="team-position">HR-директор &amp; Душа коллектива</div>
+            <div class="team-name-over">Кирочка</div>
+          </div>
+        </div>
+        <div class="team-body">
+          <p class="team-quote">
+            «У нас не просто работают — у нас живут. 
+            Я всегда говорю новым сотрудникам: полюби пену — и пена полюбит тебя.»
+          </p>
+          <p class="team-bio">
+            Кира Владимировна Носкова пришла в компанию в 2007 году секретарём, 
+            а через полгода уже проводила корпоративы, тимбилдинги и аттестации 
+            пенной культуры. Сейчас в её ведении 214 сотрудников, ежеквартальный 
+            «День пены» (обязательное посещение), стенгазета «Пенный вестник» 
+            и кружок макраме по пятницам. 
+            Единственный человек, которого Кабаныч побаивается.
+          </p>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
