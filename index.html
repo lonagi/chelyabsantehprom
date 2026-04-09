@@ -985,14 +985,19 @@
     }
     .gost-bar-text strong { color: white; }
 
+    /* Бургер по умолчанию скрыт на десктопе */
+    .nav-burger { display: none; }
+
     /* ===== UTILITY ===== */
     .text-center { text-align: center; }
     .mt-sm { margin-top: 24px; }
 
+    /* ===== ПЛАНШЕТ ===== */
     @media (max-width: 900px) {
       .hero { grid-template-columns: 1fr; min-height: auto; }
       .hero-image-wrap { display: none; }
       .hero-content { padding: 60px 32px; }
+      .section-inner { padding: 0 24px; }
       .about-grid, .invention-grid, .order-grid { grid-template-columns: 1fr; gap: 40px; }
       .products-grid { grid-template-columns: repeat(2, 1fr); }
       .features-grid { grid-template-columns: repeat(2, 1fr); }
@@ -1000,7 +1005,113 @@
       .reviews-grid { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
       .certs-grid { grid-template-columns: 1fr; }
+      .awards-row { grid-template-columns: 1fr 1fr; }
+      .team-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
+      .nav-links { gap: 16px; }
+      .nav-links a { font-size: 12px; }
+    }
+
+    /* ===== МОБИЛКА ===== */
+    @media (max-width: 600px) {
+      /* Навигация — бургер */
+      .nav-inner { padding: 14px 20px; }
+      .nav-links { display: none; }
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: rgba(10,10,10,0.98);
+        z-index: 200;
+        align-items: center;
+        justify-content: center;
+        gap: 32px;
+      }
+      .nav-links.open a { font-size: 22px; }
+      .nav-burger {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        z-index: 300;
+        background: none;
+        border: none;
+        padding: 4px;
+      }
+      .nav-burger span {
+        display: block;
+        width: 26px;
+        height: 2px;
+        background: white;
+        transition: all 0.3s;
+      }
+      .nav-burger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+      .nav-burger.open span:nth-child(2) { opacity: 0; }
+      .nav-burger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+      .nav-close { display: block !important; }
+
+      /* Hero */
+      .hero { padding: 0; }
+      .hero-content { padding: 48px 20px 40px; }
+      .hero h1 { font-size: 40px; }
+      .hero-subtitle { font-size: 18px; }
+      .hero-desc { font-size: 14px; }
+      .hero-btns { flex-direction: column; }
+      .btn-primary, .btn-outline { width: 100%; text-align: center; padding: 14px 20px; }
+      .hero-stats { gap: 20px; flex-wrap: wrap; }
+      .hero-stat-num { font-size: 28px; }
+
+      /* Общие секции */
+      .section { padding: 64px 0; }
+      .section-inner { padding: 0 20px; }
+      .section-title { font-size: 28px; }
+      .section-lead { font-size: 16px; }
+
+      /* ГОСТ полоска */
+      .gost-bar-text { font-size: 11px; }
+
+      /* О компании */
+      .about-grid { grid-template-columns: 1fr; gap: 32px; }
+      .about-img { order: -1; }
+      .about-img img { box-shadow: 4px 4px 0 var(--red); }
+      .timeline { padding-left: 28px; }
+
+      /* Команда */
+      .team-grid { grid-template-columns: 1fr; gap: 24px; max-width: 100%; }
+
+      /* Плашка YouTube */
+      .youtube-banner { flex-direction: column !important; gap: 16px !important; padding: 24px 20px !important; }
+
+      /* Изобретение */
+      .invention-grid { grid-template-columns: 1fr; gap: 32px; }
+      .invention-img { order: -1; }
+      .invention-img img { aspect-ratio: 4/3; }
+
+      /* Продукты */
+      .products-grid { grid-template-columns: 1fr; }
+
+      /* Преимущества */
+      .features-grid { grid-template-columns: 1fr; gap: 32px; }
+
+      /* Цифры */
+      .numbers-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+      .number-value { font-size: 40px; }
+
+      /* Отзывы */
+      .reviews-grid { grid-template-columns: 1fr; }
+      .review-card { padding: 24px 20px; }
+
+      /* Сертификаты */
+      .certs-grid { grid-template-columns: 1fr; }
       .awards-row { grid-template-columns: 1fr; }
+
+      /* Заказ */
+      .order-grid { grid-template-columns: 1fr; gap: 32px; }
+      .form-card { padding: 24px 20px; }
+
+      /* Футер */
+      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+      .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
     }
   </style>
 </head>
@@ -1010,14 +1121,17 @@
 <nav>
   <div class="nav-inner">
     <a href="#" class="nav-logo">ЧелябСанТех<span>Пром</span></a>
-    <ul class="nav-links">
-      <li><a href="#about">О компании</a></li>
-      <li><a href="#team">Команда</a></li>
-      <li><a href="#products">Продукция</a></li>
-      <li><a href="#advantages">Преимущества</a></li>
-      <li><a href="#reviews">Отзывы</a></li>
-      <li><a href="#order" class="nav-cta">Заказать</a></li>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about" onclick="closeMenu()">О компании</a></li>
+      <li><a href="#team" onclick="closeMenu()">Команда</a></li>
+      <li><a href="#products" onclick="closeMenu()">Продукция</a></li>
+      <li><a href="#advantages" onclick="closeMenu()">Преимущества</a></li>
+      <li><a href="#reviews" onclick="closeMenu()">Отзывы</a></li>
+      <li><a href="#order" class="nav-cta" onclick="closeMenu()">Заказать</a></li>
     </ul>
+    <button class="nav-burger" id="navBurger" onclick="toggleMenu()" aria-label="Меню">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
 
@@ -1198,7 +1312,7 @@
 
     </div>
 
-    <div style="margin-top: 56px; background: #1a1a1a; border-radius: 4px; padding: 28px 36px; display: flex; align-items: center; gap: 28px; max-width: 860px; margin-left: auto; margin-right: auto; border-left: 4px solid var(--red);">
+    <div class="youtube-banner" style="margin-top: 56px; background: #1a1a1a; border-radius: 4px; padding: 28px 36px; display: flex; align-items: center; gap: 28px; max-width: 860px; margin-left: auto; margin-right: auto; border-left: 4px solid var(--red);">
       <div style="font-size: 40px; flex-shrink: 0;">▶️</div>
       <div>
         <p style="font-family: 'Oswald', sans-serif; font-size: 13px; text-transform: uppercase; letter-spacing: 2px; color: var(--gold); margin-bottom: 6px;">Знакомы с этими персонажами?</p>
@@ -1786,5 +1900,25 @@
   </div>
 </footer>
 
+<script>
+  function toggleMenu() {
+    const links = document.getElementById('navLinks');
+    const burger = document.getElementById('navBurger');
+    links.classList.toggle('open');
+    burger.classList.toggle('open');
+    document.body.style.overflow = links.classList.contains('open') ? 'hidden' : '';
+  }
+  function closeMenu() {
+    const links = document.getElementById('navLinks');
+    const burger = document.getElementById('navBurger');
+    links.classList.remove('open');
+    burger.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  // Закрыть меню при клике вне его
+  document.getElementById('navLinks').addEventListener('click', function(e) {
+    if (e.target === this) closeMenu();
+  });
+</script>
 </body>
 </html>
